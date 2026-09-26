@@ -64,3 +64,39 @@ kurtosis <- function(x){
   
   return((m4/(sd^4)) - 3)
 }
+
+
+
+
+
+
+
+
+xi <- sort(unique(data))
+N_total <- length(data)
+
+ni <- sapply(xi, function(val) sum(data == val))
+
+Ni <- cumsum(ni)
+
+fi <- round(ni/N_total, 4)
+Fi <- round(cumsum(fi), 4)
+
+frequencies_table <- data.frame(
+  Grade_xi = xi, 
+  Frec_Abs_ni = ni, 
+  Frec_Abs_Acum_Ni = Ni, 
+  Frec_Rel_fi = fi, 
+  frec_Rel_Acum_Fi = Fi
+)
+
+print(frequencies_table)
+
+barplot(    #bar chart
+  height = ni, 
+  names.arg = xi, 
+  xlab = "grades", 
+  ylab = "absolute frequency",
+  ylim = c(0, max(ni) + 2), 
+  border = "black"
+)
