@@ -100,3 +100,11 @@ barplot(    #bar chart
   ylim = c(0, max(ni) + 2), 
   border = "black"
 )
+
+
+
+
+
+meanFreqAgroupData <- function(xi, ni, N){    #if we only have xi and ni
+  return((sum(xi * ni)) / N)
+}
