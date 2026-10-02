@@ -33,12 +33,13 @@ standardDeviation <- function(x){
   n <- length(x_clear)
   return(sqrt(sum((x_clear - m)^2) / n))
 }
-
+#Standard deviation = absolute dispersion
 
 
 coefficientOfVariation <- function(standard_deviation, mean){
-  return(standard_deviation / mean)
+  return (standard_deviation / mean)
 }
+#Coefficient of variation = relative dispersion
 
 
 
